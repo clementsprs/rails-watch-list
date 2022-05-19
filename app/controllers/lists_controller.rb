@@ -4,7 +4,7 @@ class ListsController < ApplicationController
   end
 
   def show
-    @list = List.find(list_params)
+    @list = List.find(params[:id])
   end
 
   def new
@@ -20,6 +20,7 @@ class ListsController < ApplicationController
   private
 
   def list_params
+    rails
     params.require(:list).permit(:name)
   end
 end

@@ -1,2 +1,13 @@
-<h1>Lists#index</h1>
-<p>Find me in app/views/lists/index.html.erb</p>
+<div class="banner mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://loremflickr.com/640/480/thug);">
+  <div class="container justify-content-center">
+    <h1 class="mb-3">Save any kind of movies</h1>
+    <a class="btn btn-flat" href="#">Add a movie list</a>
+  </div>
+</div>
+
+<div class="cards ml-3 mr-3">
+<% @lists.each do |list| %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://loremflickr.com/640/480/<%= list.name  %>'">
+      <%= link_to list.name, list_path(list) %>
+  </div>
+<% end %>
