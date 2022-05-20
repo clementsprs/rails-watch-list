@@ -9,5 +9,4 @@ development:
 
 test:
   <<: *default
-  database: rails-watch-list_testcurl https://cli-assets.heroku.com/install.sh | sh
-heroku --version # It should display heroku/x.x.x
+  database: rails-watch-list_test
