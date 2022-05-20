@@ -50,3 +50,7 @@ gem 'rspec-rails', group: [ :test ]
 gem 'rails-controller-testing', group: [ :test ]
 
 gem 'simple_form'
+gem 'webpacker', '~> 5.0'
+
+gem 'dotenv-rails', groups: [:development, :test]
+

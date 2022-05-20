@@ -1,17 +1,20 @@
 <div class="banner mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://loremflickr.com/640/480/<%= @list.name %>);">
   <div class="container justify-content-center">
     <h1 class="mb-3"> <%= @list.name %> </h1>
-    <button><%= link_to "Add a movie", new_list_bookmark_path(@list) %></button>
+    <button class="btn btn-flat"><%= link_to "Add a movie", new_list_bookmark_path(@list) %></button>
   </div>
 </div>
 
-<div class="cards ml-3 mr-3">
+<div class="row m-3">
   <% @list.bookmarks.each do |bookmark| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://loremflickr.com/640/480/<%= bookmark.movie.title %>')">
-      <%= bookmark.movie.title %>
-        <span class="float-end text-muted">
-        <%= link_to "🗑️", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure baby ?"} %>
-        </span>
+      <div class="col-sm-3">
+      <div class="card" style="width: 25rem;">
+        <img class="card-img-top" src="https://loremflickr.com/640/480/<%= bookmark.movie.title %>" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card"><%= bookmark.movie.title %></h5>
+          <p class="card-text"><%= bookmark.comment %>.</p>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>

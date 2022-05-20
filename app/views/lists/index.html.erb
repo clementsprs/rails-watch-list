@@ -5,7 +5,7 @@
   </div>
 </div>
 
-<div class="cards ml-3 mr-3">
+<div class="cards m-3">
 <% @lists.each do |list| %>
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://loremflickr.com/640/480/<%= list.name  %>'">
       <%= link_to list.name, list_path(list) %>
